@@ -1,6 +1,6 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
+title: "Is there any inequality in prision system in the United States?"
+author: "Yeji Kim"
 date: '2022-11-01'
 output: html_document
 ---
@@ -10,36 +10,50 @@ source("../source/a4-helpers.R")
 source("../source/analysis.R")
 ```
 
+
 ## Abstract 
-[TODO: Include a short abstract (about 50 words)]
-
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
-
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
-```
+There has been a question of if there is an inequality prison system in the United States. The data summary shows how four different variables can demonstrate racial inequality in two different years, and four charts illustrate the increase in the jail population and how it is related to the inequality prison system. 
 
 ## Introduction 
-[TODO]
+There is a potential inequality in the prison system in the United States. The prevalent racism causes the disproportionate incarceration of people of color by creating stereotypes in the crime scene and this results in over-policing of them. For instance, black people are twice as likely to be arrested as white people. Why does this happen in society? The direct stakeholders who are people in power are less aware of the criminalization and racial disparity and therefore their authority supposed to resolve the unequal social and political structures are not yet widely used. Moreover, Vera’s work showed that people behind bars are less likely to be given opportunities for growth, such as higher education and job opportunities. This can indirectly influence people inside the bars where exceeding racial disparity causes less public safety so they also need to work for racial inequality in the prison system.  
 
 ## Data Summary 
-[TODO]
+The max black jail population in a county in the year 2018 is **`r black_jail_max2018`** while the max white jail population in the same year is **`r white_jail_max2018`**. In the different year 2000, the max black jail population in a county is **`r black_jail_max2000`** whereas the max white jail population is **`r white_jail_max2000`**.  Although there are more white people in the United States, the numbers show that there are more black people in jail.   
 
-[TODO ... other sections ... See Canvas for details]
+## Chart 1: 
+```{r echo= FALSE}
+plot_jail_pop_for_us()
+```
 
-_All the very best with your work!_
+_**Figure 1**_: The jail population in the United States has been increased from 1970 to 2018. 
 
+The graph shows that there is about four times greater jail population in 2018 compared to 1970. The jail population from 1970 to 1980 had minimal difference but it began to dramatically increase since 1980. It peaked around the late 2000s and remained almost consistent until 2018. 
+
+## Chart2: 
+```{r echo= FALSE}
+plot_jail_pop_by_states(states)
+```
+
+_**Figure 2**_: The jail population has been increased from 1970 to 2019 in three states: Washington, New York, and California.
+
+The graph shows that the jail population in all three states – Washington, New York, and California - increased in about 50 years. However, there were about 10,000 people differences in jail population between New York and California in 1970 but that of 2018 became five times larger. This shows that the most dramatic increase happened in California. 
+
+## Chart3: 
+```{r fig.height = 9, fig.width = 20, echo= FALSE}
+race_stacked_bar()
+```
+
+_**Figure 3**_: The jail population by race is disproportionately distributed in the states. 
+
+Question: Is there a racial disproportion in prison systems among states? 
+To figure out if there is a racial disproportion in prison systems in each state, the graph shows how the jail population differs by race in them. Despite consideration of the white population majority in the United States, many states show that either black or Latinx either outnumber or have a similar jail population as white. Asian Americans or Pacific Islanders usually have a small proportion in most states. Native American jail populations vary in each state. 
+
+## Chart4: 
+```{r echo= FALSE}
+create_map("CA")
+```
+
+_**Figure 4**_: The black jail population 
+
+Question: How is the black jail population distributed in California?
+The distribution of black jail population in California can lead to a discussion if there is any particular region that possibly exists inequality in prison systems. The divided map shows that 
